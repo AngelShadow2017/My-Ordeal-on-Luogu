@@ -50,6 +50,7 @@ bool findTo(int cur,int target,Node& node,string& str,int depth = 0){
         return false;
     }
 }
+//迭代版。
 bool matchBackward(int pos,int target, const string& s) {
     Node* p = &root;
     // 最长单词长度 <= 10
@@ -60,7 +61,7 @@ bool matchBackward(int pos,int target, const string& s) {
         if (p==NULL) return false;
         if (p->isWord) {
             int start = pos - d; // 单词起始位置 (0-based)
-            if (start<=target) return true; // dp[start] 表示前 start 个字符可拆分
+            if (start<=target) return true;
         }
     }
     return false;
